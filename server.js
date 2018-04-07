@@ -6,10 +6,17 @@ const cors = require('cors');
 const projectsRouters = require('./routers/projectsRouters.js');
 const server = express();
 
-server.use(express.json());
-const logger = (req, res, next) => server.use(morgan('dev'));
+// Middleware
+const logger = (req, res, next) => {
+  next();
+};
+server.use(morgan('dev'));
+server.use;
 server.use(helmet());
 server.use(cors());
+
+server.use('/api/projects', projectsRouters);
+server.use(express.json());
 
 const port = 5000;
 

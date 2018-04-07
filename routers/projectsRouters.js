@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
       res.json(actions);
     })
     .catch(error => {
-      res.status(500).json({ error: 'Unable processing actions' });
+      res.status(500).json({ error: 'Error processing actions' });
     });
 });
 
@@ -21,7 +21,8 @@ router.get('/:id', (req, res) => {
       res.json(action);
     })
     .catch(error => {
-      res.status(500).json({ error: 'Unable to process user.' });
+      res.status(500).json({ error: 'Error processing user' });
     });
 });
+
 module.exports = router;
